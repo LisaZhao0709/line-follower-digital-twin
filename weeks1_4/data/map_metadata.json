@@ -1,0 +1,14 @@
+{
+  "source": "codex-clipboard-a9d81006-c729-4171-a190-d887126159d7.webp",
+  "line_width_m": 0.02,
+  "measured_binary_stroke_px": 5.0,
+  "meters_per_pixel": 0.004,
+  "map_width_m": 2.56,
+  "map_height_m": 1.72,
+  "scale_method": "2 cm / median thresholded horizontal stroke width; diagram estimate, not field measurement",
+  "retained_component_count": 1,
+  "border_removed": true,
+  "track_pixels": 13170,
+  "reference_boundary_length_m": 11.019416156925983,
+  "note": "Lap reference is the inner edge, not ground truth centerline; never fed to controller."
+}

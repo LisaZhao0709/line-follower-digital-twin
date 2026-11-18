@@ -1,0 +1,8 @@
+{
+  "week": 5,
+  "passed": true,
+  "actual_simulink_cases": 8,
+  "equation_checks": 200,
+  "repeat_exact": true,
+  "unit_and_invalid_input_checks": true
+}

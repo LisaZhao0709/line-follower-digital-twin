@@ -1,0 +1,32 @@
+name: Python and MQTT tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    defaults:
+      run:
+        working-directory: web_app
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: pip
+          cache-dependency-path: web_app/requirements.txt
+      - name: Install application dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Run component, numerical and real MQTT tests
+        run: python -B -m unittest test_components test_system -v

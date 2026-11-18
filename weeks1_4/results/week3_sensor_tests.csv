@@ -1,0 +1,5 @@
+case_name,x_m,y_m,error,detected,passed
+centered,0.48,0.196,-0.0489427535970683,1,1
+car_above_line,0.48,0.216,-0.769437265542468,1,1
+car_below_line,0.48,0.176,0.65913416302896,1,1
+outside_map,-1,-1,0,0,1

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Line-Follower Digital Twin · Seven-Layer Architecture</title>
+  <link rel="stylesheet" href="/static/showcase.css">
+
+  <!-- Prism.js (Python syntax highlighting, inline CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+</head>
+<body>
+
+<!-- ══ GLOBAL TOPBAR ══════════════════════════════════════════════ -->
+<header id="topbar">
+  <a class="brand" href="#home">
+    <div class="dot"></div>
+    <span>Line-Follower Twin</span>
+  </a>
+
+  <!-- Layer progress navigation -->
+  <nav id="layer-nav" aria-label="Layer navigation">
+    <button class="lnav-btn" data-l="h" onclick="goHome()">Overview</button>
+    <button class="lnav-btn" data-l="1" onclick="goLayer(1)">L1</button>
+    <button class="lnav-btn" data-l="2" onclick="goLayer(2)">L2</button>
+    <button class="lnav-btn" data-l="3" onclick="goLayer(3)">L3</button>
+    <button class="lnav-btn" data-l="4" onclick="goLayer(4)">L4</button>
+    <button class="lnav-btn" data-l="5" onclick="goLayer(5)">L5</button>
+    <button class="lnav-btn" data-l="6" onclick="goLayer(6)">L6</button>
+    <button class="lnav-btn" data-l="7" onclick="goLayer(7)">L7</button>
+    <a href="/" style="margin-left:8px;font-size:11px;color:var(--text-muted);text-decoration:none;">
+      Vehicle dashboard ↗
+    </a>
+  </nav>
+
+  <!-- Global control bar -->
+  <div id="ctrl-bar">
+    <div id="state-pill">
+      <div id="state-dot" class="idle"></div>
+      <span id="state-label">Idle</span>
+    </div>
+    <span id="sim-time-top">t = 0.00s</span>
+    <select id="speed-sel" title="Simulation speed">
+      <option value="1">1×</option>
+      <option value="4" selected>4×</option>
+      <option value="8">8×</option>
+    </select>
+    <button class="ctrl-btn primary" id="btn-run">▶ Run</button>
+    <button class="ctrl-btn" id="btn-pause" aria-label="Pause" title="Pause">⏸</button>
+    <button class="ctrl-btn" id="btn-step">⏭ Step</button>
+    <button class="ctrl-btn danger" id="btn-reset">↺ Reset</button>
+  </div>
+</header>
+
+<!-- ══ PAGE WRAPPER ══════════════════════════════════════════════ -->
+<div id="page-wrap">
+
+  <!-- HOME PAGE -->
+  <div id="home-page" class="page active">
+    <!-- JS fills this -->
+  </div>
+
+  <!-- LAYER PAGE (shared shell, JS replaces content) -->
+  <div id="layer-page" class="page">
+    <!-- JS fills this -->
+  </div>
+
+</div>
+
+<!-- ══ BOTTOM NAV ════════════════════════════════════════════════ -->
+<footer id="bottom-nav" class="hidden">
+  <button class="nav-btn" id="btn-prev">
+    <span class="arrow">←</span> Overview
+  </button>
+  <div class="nav-center">
+    <span id="nav-center-text"></span>
+  </div>
+  <button class="nav-btn next" id="btn-next">
+    Next layer <span class="arrow">→</span>
+  </button>
+</footer>
+
+<script src="/static/showcase.js"></script>
+</body>
+</html>
+
